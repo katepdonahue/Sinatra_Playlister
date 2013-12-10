@@ -34,6 +34,12 @@ class Song
     @@all.detect{|a| a.name == string}
   end
 
+  def self.song_list
+    self.all.map do |song|
+      "#{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+  end
+
   def url
     self.name.downcase.gsub(' ','-')
   end

@@ -47,11 +47,11 @@ class Artist
   end
 
   def self.index
+    new_array =[]
     @@artists.each_with_index do |artist, i|
       artist.songs.size > 1 ? s = "songs" : s = "song"
-      puts "#{i + 1}. #{artist.name} - #{artist.songs.size} #{s.capitalize}"
+      new_array << "#{artist.name} - #{artist.songs.size} #{s.capitalize}"
     end
-    puts "\nTotal: #{@@artists.size} Artists"
-    puts "\n"
+    new_array
   end
 end

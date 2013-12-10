@@ -47,13 +47,12 @@ class Genre
 
  #sort on qty of songs in a genre
   def self.sort_by_songs
-    sorted_genres = self.all.sort_by do |genre|
-      genre.songs.count
-    end
+    new_array = []
+    sorted_genres = self.all.sort_by {|genre| genre.songs.count}
     sorted_genres.reverse.each do |genre|
       genre.songs.size > 1 ? s = "songs" : s = "song"
-      puts "#{genre.name.capitalize}: #{genre.songs.size} #{s.capitalize}, #{genre.artists.size} Artists"
+      new_array << "#{genre.name.capitalize}: #{genre.songs.size} #{s.capitalize}, #{genre.artists.size} Artists"
     end
-    puts "\n"
+    new_array
   end
 end

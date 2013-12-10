@@ -1,0 +1,6 @@
+<ol>
+	<% @output.each do |song| %>
+		<li><%= song %></li>
+	<% end %>
+</ol>
+<p>Total: <%= "#{@output.size} #{@item}"%> in the library</p>
