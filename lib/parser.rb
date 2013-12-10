@@ -8,7 +8,7 @@ class Parser
   end
 
   def parse
-    songs = Dir.entries("./data").select {|f| !File.directory? f}
+    songs = Dir.entries("./public/data").select {|f| !File.directory? f}
     songs.each do |filename|
       artist_name = /(.*)\s-\s/.match(filename)
       artist_name = artist_name[1]
