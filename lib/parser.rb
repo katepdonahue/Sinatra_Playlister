@@ -1,7 +1,3 @@
-require './artist'
-require './song'
-require './genre'
-
 class Parser
   attr_accessor :data
 
@@ -12,7 +8,7 @@ class Parser
   end
 
   def parse
-    songs = Dir.entries("../data").select {|f| !File.directory? f}
+    songs = Dir.entries("./data").select {|f| !File.directory? f}
     songs.each do |filename|
       artist_name = /(.*)\s-\s/.match(filename)
       artist_name = artist_name[1]
@@ -24,46 +20,3 @@ class Parser
     end
   end
 end
-
-
-# require './artist'
-# require './song'
-# require './genre'
-# # require 'debugger'
-
-# def artist(data)
-#   artist_array = []
-#   songs = Dir.entries(data).select {|f| !File.directory? f}
-#   songs.each do |filename|
-#     regex = /(.*)\s-\s/
-#     m = regex.match(filename)
-#     artist_array << m[1]  
-#   end
-#   artist_array
-# end
-
-# def song(data)
-#   song_array = []
-#   songs = Dir.entries(data).select {|f| !File.directory? f}
-#   songs.each do |filename|
-#     regex = /\s-\s(.*)\s/
-#     m = regex.match(filename)
-#     song_array << m[1]
-#   end
-#   song_array
-# end
-
-# def genre(data)
-#   genre_array = []
-#   songs = Dir.entries(data).select {|f| !File.directory? f}
-#   songs.each do |filename|
-#     regex = /\[(.+)\]/
-#     m = regex.match(filename)
-#     genre_array << m[1]
-#   end
-#   genre_array
-# end
-
-# puts genre("../data")
-# puts song("../data")
-# puts artist("../data")

@@ -1,8 +1,7 @@
-require './artist'
-require './song'
-require './genre'
-require './parser'
-
+require_relative "./lib/artist"
+require_relative "./lib/song"
+require_relative "./lib/genre"
+require_relative "./lib/parser"
 
 class CLI
   attr_accessor :songs, :selection
