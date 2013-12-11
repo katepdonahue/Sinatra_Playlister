@@ -50,6 +50,12 @@ class App < Sinatra::Application
     # eventually this will have a photo or music video
     erb :song_page
   end
+
+  get '/genres/:input' do |input|
+    @genre = Genre.find_by_name(input)
+    @genre.songs.size > 1 ? @s = "songs" : @s = "song"
+    erb :genre_page
+  end
  
 end
 
