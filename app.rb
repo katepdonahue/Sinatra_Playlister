@@ -36,14 +36,19 @@ class App < Sinatra::Application
   end
 
   get '/artists/:input' do |input|
-    @artist = Artist.find_by_name(input.downcase)
+    @artist = Artist.find_by_name(input)
     @artist.songs.size > 1 ? @s = "songs" : @s = "song"
     @song_array = []
     @artist.songs.each_with_index do |song, index|
       @song_array << "#{song.name} - #{song.genre.name}"
     end
     erb :artist_page
+  end
 
+  get '/songs/:input' do |input|
+    @song = Song.find_by_name(input)
+    # eventually this will have a photo or music video
+    erb :song_page
   end
  
 end

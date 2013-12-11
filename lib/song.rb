@@ -31,7 +31,7 @@ class Song
   end
 
   def self.find_by_name(string)
-    @@all.detect{|a| a.name == string}
+    @@all.detect{|a| a.name.downcase == string.downcase}
   end
 
   def format
