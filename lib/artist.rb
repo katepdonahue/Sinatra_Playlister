@@ -39,7 +39,7 @@ class Artist
   end
 
   def self.find_by_name(string)
-    @@artists.detect{|a| a.name.downcase == string}
+    @@artists.detect{|a| a.name.downcase == string.downcase}
   end
 
   def url
