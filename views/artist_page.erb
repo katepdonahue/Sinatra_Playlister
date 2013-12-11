@@ -1,6 +1,7 @@
-<h1><%="#{@artist.name} - #{@artist.songs.count} #{@s}"%></h1>
+<h1><%="#{@artist.name}"%></h1>
 <ol>
 	<% @artist.songs.each do |song| %>
 		<li><a href="/songs/<%= song.name.downcase.gsub(".", "") %>"><%= song.name %> - <%= song.genre.name %></a></li>
 	<% end %>
 </ol>
+<a href="/">Home</a>

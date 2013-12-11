@@ -1,2 +1,4 @@
 <h1><%= @song.name %></h1>
-<p>Artist: <%= @song.artist.name %><br>Genre: <%= @song.genre.name %></p>
+<p>Artist: <a href="/artists/<%= @song.artist.name.downcase.gsub(".", "") %>"><%= @song.artist.name %></a><p>
+<p>Genre: <a href="/genres/<%= @song.genre.name%>"><%= @song.genre.name %></a></p>
+<a href="/">Home</a>

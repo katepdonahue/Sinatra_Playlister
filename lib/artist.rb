@@ -48,6 +48,6 @@ class Artist
 
   def format
     self.songs.size > 1 ? s = "songs" : s = "song"
-    "#{self.name} - #{self.songs.size} #{s.capitalize}"
+    "#{self.name}"
   end
 end

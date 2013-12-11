@@ -48,6 +48,6 @@ class Genre
  #sort on qty of songs in a genre
   def format
     self.songs.size > 1 ? s = "songs" : s = "song"
-    "#{self.name.capitalize}: #{self.songs.size} #{s.capitalize}, #{self.artists.size} Artists"
+    "#{self.name.capitalize}"
   end
 end
