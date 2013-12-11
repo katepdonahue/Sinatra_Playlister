@@ -1,6 +1,6 @@
 <h1><%="#{@genre.name.capitalize} - #{@genre.songs.count} #{@s}"%></h1>
 <ol>
 	<% @genre.songs.each do |song| %>
-		<li><%= song.name %> - <%= song.artist.name %></li>
+		<li><a href="/songs/<%= song.name.downcase.gsub(".", "") %>"><%= song.name %> - <%= song.artist.name %></a></li>
 	<% end %>
 </ol>

@@ -1,6 +1,6 @@
 <h1><%="#{@artist.name} - #{@artist.songs.count} #{@s}"%></h1>
 <ol>
-	<% @song_array.each do |song| %>
-		<li><%= song %></li>
+	<% @artist.songs.each do |song| %>
+		<li><a href="/songs/<%= song.name.downcase.gsub(".", "") %>"><%= song.name %> - <%= song.genre.name %></a></li>
 	<% end %>
 </ol>
