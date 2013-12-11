@@ -1,6 +1,6 @@
 <ol>
-	<% @output.each do |song| %>
-		<li><%= song %></li>
+	<% @output.each do |object| %>
+		<li><a href="<%=@item%>/<%= object.name.downcase%>"><%= object.format %></a></li>
 	<% end %>
 </ol>
 <p>Total: <%= "#{@output.size} #{@item}"%> in the library</p>

@@ -39,19 +39,15 @@ class Artist
   end
 
   def self.find_by_name(string)
-    @@artists.detect{|a| a.name == string}
+    @@artists.detect{|a| a.name.downcase == string}
   end
 
   def url
     name.downcase.gsub(' ','-')
   end
 
-  def self.index
-    new_array =[]
-    @@artists.each_with_index do |artist, i|
-      artist.songs.size > 1 ? s = "songs" : s = "song"
-      new_array << "#{artist.name} - #{artist.songs.size} #{s.capitalize}"
-    end
-    new_array
+  def format
+    self.songs.size > 1 ? s = "songs" : s = "song"
+    "#{self.name} - #{self.songs.size} #{s.capitalize}"
   end
 end

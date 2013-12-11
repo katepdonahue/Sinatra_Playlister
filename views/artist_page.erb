@@ -1,0 +1,6 @@
+<h1><%="#{@artist.name} - #{@artist.songs.count} #{@s}"%></h1>
+<ol>
+	<% @song_array.each do |song| %>
+		<li><%= song %></li>
+	<% end %>
+</ol>

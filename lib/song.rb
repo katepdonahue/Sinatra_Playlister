@@ -34,10 +34,8 @@ class Song
     @@all.detect{|a| a.name == string}
   end
 
-  def self.song_list
-    self.all.map do |song|
-      "#{song.artist.name} - #{song.name} - #{song.genre.name}"
-    end
+  def format
+    "#{self.artist.name} - #{self.name} - #{self.genre.name}"
   end
 
   def url
