@@ -35,7 +35,7 @@ class Song
   end
 
   def format
-    "#{self.artist.name} - #{self.name} - #{self.genre.name}"
+    "#{self.name} - #{self.artist.name} (#{self.genre.name})"
   end
 
   def url

@@ -21,7 +21,7 @@ class App < Sinatra::Application
     
     case input
     when "songs"
-      @output = Song.all
+      @output = Song.all.sort_by {|song| song.name}
       @item = "songs"
     when "artists"
       @output = Artist.all
