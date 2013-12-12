@@ -4,4 +4,7 @@
 		<li><a href="/songs/<%= song.name.downcase.gsub(".", "") %>"><%= song.name %> - <%= song.genre.name %></a></li>
 	<% end %>
 </ol>
+<div>
+<iframe width="560" height="315" src="//www.youtube.com/embed/<%= @video %>" frameborder="0" allowfullscreen></iframe>
+</div>
 <a href="/">Home</a>
