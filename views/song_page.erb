@@ -1,4 +1,7 @@
 <h1><%= @song.name %></h1>
 <p>Artist: <a href="/artists/<%= @song.artist.name.downcase.gsub(".", "") %>"><%= @song.artist.name %></a><p>
 <p>Genre: <a href="/genres/<%= @song.genre.name%>"><%= @song.genre.name %></a></p>
+<div>
+<iframe width="560" height="315" src="//www.youtube.com/embed/<%= @video %>" frameborder="0" allowfullscreen></iframe>
+</div>
 <a href="/">Home</a>
