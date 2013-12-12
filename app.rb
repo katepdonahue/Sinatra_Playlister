@@ -5,6 +5,7 @@ require "./lib/artist"
 require "./lib/song"
 require "./lib/genre"
 require "./lib/parser"
+require "./lib/scraper"
 
 
 class App < Sinatra::Application
@@ -43,8 +44,9 @@ class App < Sinatra::Application
 
   get '/songs/:input' do |input|
     @song = Song.find_by_name(input)
-    url = "https://www.youtube.com/watch?v=KaasJ44O5lI&amp;feature=youtube_gdata" # scraped url from youtube API
-    match_obj = /.*v=(.*)&.*/.match(url)
+    my_scraper = Video_Scraper.new(@song.artist.url_format, @song.url_format)
+    url = my_scraper.video # scraped url from youtube API
+    match_obj = /.*v\/(.*)\?.*/.match(url)
     @video = match_obj[1]
     erb :song_page
   end

@@ -50,4 +50,8 @@ class Artist
     self.songs.size > 1 ? s = "songs" : s = "song"
     "#{self.name}"
   end
+
+  def url_format
+    self.name.gsub(" ", "%20").gsub(".", "").downcase
+  end
 end

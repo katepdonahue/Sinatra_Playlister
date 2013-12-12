@@ -2,6 +2,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     bond (0.4.3)
+    mini_portile (0.5.2)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     rack (1.5.2)
     rack-protection (1.5.1)
       rack
@@ -32,6 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nokogiri
   shotgun
   sinatra
   tux

@@ -42,4 +42,7 @@ class Song
     self.name.downcase.gsub(' ','-')
   end
 
+  def url_format
+    self.name.gsub(" ", "%20").gsub(".", "").downcase
+  end
 end
