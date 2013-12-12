@@ -1,0 +1,16 @@
+body {
+	background-image: url('./images/notebook.jpg');
+	background-size: 100%;
+}
+
+h1 {
+	font-family: 'Londrina Outline', cursive;
+	font-size: 100px;
+	margin-left: 15%;
+}
+
+ul {
+	margin-left: 15%;
+	font-family: 'Architects Daughter', cursive;
+	font-size: 35px;
+}

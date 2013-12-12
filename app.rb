@@ -38,10 +38,9 @@ class App < Sinatra::Application
   get '/artists/:input' do |input|
     @artist = Artist.find_by_name(input)
     @artist.songs.size > 1 ? @s = "songs" : @s = "song"
-    @song_array = []
-    @artist.songs.each_with_index do |song, index|
-      @song_array << "#{song.name} - #{song.genre.name}"
-    end
+    url = "https://www.youtube.com/watch?v=KaasJ44O5lI&amp;feature=youtube_gdata" # scraped url from youtube API
+    match_obj = /.*v=(.*)&.*/.match(url)
+    @video = match_obj[1]
     erb :artist_page
   end
 
