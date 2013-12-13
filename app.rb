@@ -9,10 +9,8 @@ require "./lib/scraper"
 
 
 class App < Sinatra::Application
-  before do
-    library = Parser.new
-    library.parse
-  end
+  library = Parser.new
+  library.parse
 
   get '/' do
     erb :index
